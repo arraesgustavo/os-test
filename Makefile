@@ -10,7 +10,7 @@ OBJ_DIR = $(BUILD_DIR)/obj
 TARGET = $(BUILD_DIR)/os_test
 TARGET_ASAN = $(BUILD_DIR)/os_test_asan
 
-SRCS = src/main.c
+SRCS = src/main.c src/test_scheduler.c src/test_ipc.c
 HEADERS = include/os_test.h
 OBJS = $(patsubst src/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 

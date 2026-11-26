@@ -43,7 +43,12 @@ static int test_core_smoke(char *detail_buf, size_t detail_size) {
 }
 
 static const os_test_case_t g_tests[] = {
-    { "core", "monotonic_timer_and_pagesize", test_core_smoke },
+    { "core",      "monotonic_timer_and_pagesize", test_core_smoke },
+    { "scheduler", "mutex_contention",             test_mutex_contention },
+    { "scheduler", "condvar_producer_consumer",    test_condvar_producer_consumer },
+    { "scheduler", "context_switch_latency",       test_context_switch_latency },
+    { "ipc",       "unix_socketpair",              test_unix_socketpair },
+    { "ipc",       "anonymous_shared_memory",      test_anonymous_shared_memory },
 };
 
 static const size_t g_test_count = sizeof(g_tests) / sizeof(g_tests[0]);

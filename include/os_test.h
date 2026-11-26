@@ -130,4 +130,13 @@ static inline os_test_result_t os_test_run_case(const os_test_case_t *tc) {
         return OS_TEST_PASS;                                                   \
     } while (0)
 
+/* Scheduler / concurrency test suite (src/test_scheduler.c) */
+int test_mutex_contention(char *detail_buf, size_t detail_size);
+int test_condvar_producer_consumer(char *detail_buf, size_t detail_size);
+int test_context_switch_latency(char *detail_buf, size_t detail_size);
+
+/* IPC test suite (src/test_ipc.c) */
+int test_unix_socketpair(char *detail_buf, size_t detail_size);
+int test_anonymous_shared_memory(char *detail_buf, size_t detail_size);
+
 #endif /* OS_TEST_H */
