@@ -10,7 +10,8 @@ OBJ_DIR = $(BUILD_DIR)/obj
 TARGET = $(BUILD_DIR)/os_test
 TARGET_ASAN = $(BUILD_DIR)/os_test_asan
 
-SRCS = $(wildcard src/*.c)
+SRCS = src/main.c
+HEADERS = include/os_test.h
 OBJS = $(patsubst src/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 
 # Fase 4: adicionar variaveis de cross-compilacao Android NDK
@@ -25,11 +26,13 @@ linux: $(TARGET)
 $(TARGET): $(OBJS) | $(BUILD_DIR)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
-$(OBJ_DIR)/%.o: src/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: src/%.c $(HEADERS) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-asan: $(SRCS) | $(BUILD_DIR)
-	$(CC) $(ASAN_CFLAGS) $(SRCS) -o $(TARGET_ASAN) $(ASAN_LDFLAGS)
+asan: $(TARGET_ASAN)
+
+$(TARGET_ASAN): $(SRCS) $(HEADERS) | $(BUILD_DIR)
+	$(CC) $(ASAN_CFLAGS) $(SRCS) -o $@ $(ASAN_LDFLAGS)
 
 $(BUILD_DIR) $(OBJ_DIR):
 	mkdir -p $@
