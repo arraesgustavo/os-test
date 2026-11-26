@@ -1,0 +1,41 @@
+# Build output
+build/
+
+# Compiled objects and binaries
+*.o
+*.obj
+*.out
+*.a
+*.so
+*.dylib
+*.exe
+os_test
+os_test_asan
+os_test_android
+os_test_android_static
+
+# Debug and profiling artifacts
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+core
+core.*
+vgcore.*
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.*.swp
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+tmp/
