@@ -144,4 +144,11 @@ int test_mmap_page_alignment(char *detail_buf, size_t detail_size);
 int test_mprotect_readonly_fault(char *detail_buf, size_t detail_size);
 int test_mprotect_guard_page(char *detail_buf, size_t detail_size);
 
+/* Linux kernel hardening test suite (src/test_linux_sec.c) */
+int test_aslr_status(char *detail_buf, size_t detail_size);
+int test_kernel_info_leak_protections(char *detail_buf, size_t detail_size);
+int test_yama_ptrace_scope(char *detail_buf, size_t detail_size);
+int test_no_new_privs_and_seccomp(char *detail_buf, size_t detail_size);
+int test_lsm_stack(char *detail_buf, size_t detail_size);
+
 #endif /* OS_TEST_H */

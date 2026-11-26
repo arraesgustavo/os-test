@@ -52,6 +52,11 @@ static const os_test_case_t g_tests[] = {
     { "memory",    "mmap_page_alignment",          test_mmap_page_alignment },
     { "memory",    "mprotect_readonly_fault",      test_mprotect_readonly_fault },
     { "memory",    "mprotect_guard_page",          test_mprotect_guard_page },
+    { "linux_sec", "aslr_status",                  test_aslr_status },
+    { "linux_sec", "kernel_info_leak_protections", test_kernel_info_leak_protections },
+    { "linux_sec", "yama_ptrace_scope",            test_yama_ptrace_scope },
+    { "linux_sec", "no_new_privs_and_seccomp",     test_no_new_privs_and_seccomp },
+    { "linux_sec", "lsm_stack",                    test_lsm_stack },
 };
 
 static const size_t g_test_count = sizeof(g_tests) / sizeof(g_tests[0]);
