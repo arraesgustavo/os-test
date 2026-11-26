@@ -57,6 +57,10 @@ static const os_test_case_t g_tests[] = {
     { "linux_sec", "yama_ptrace_scope",            test_yama_ptrace_scope },
     { "linux_sec", "no_new_privs_and_seccomp",     test_no_new_privs_and_seccomp },
     { "linux_sec", "lsm_stack",                    test_lsm_stack },
+    { "android",   "selinux_domain_and_enforcing", test_selinux_domain_and_enforcing },
+    { "android",   "verified_boot_and_build",      test_android_verified_boot_and_build },
+    { "android",   "uid_sandbox_and_capabilities", test_uid_sandbox_and_capabilities },
+    { "android",   "filesystem_and_binder_isolation", test_filesystem_and_binder_isolation },
 };
 
 static const size_t g_test_count = sizeof(g_tests) / sizeof(g_tests[0]);

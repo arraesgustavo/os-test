@@ -151,4 +151,10 @@ int test_yama_ptrace_scope(char *detail_buf, size_t detail_size);
 int test_no_new_privs_and_seccomp(char *detail_buf, size_t detail_size);
 int test_lsm_stack(char *detail_buf, size_t detail_size);
 
+/* Android OS security and internals test suite (src/test_android_sec.c) */
+int test_selinux_domain_and_enforcing(char *detail_buf, size_t detail_size);
+int test_android_verified_boot_and_build(char *detail_buf, size_t detail_size);
+int test_uid_sandbox_and_capabilities(char *detail_buf, size_t detail_size);
+int test_filesystem_and_binder_isolation(char *detail_buf, size_t detail_size);
+
 #endif /* OS_TEST_H */
