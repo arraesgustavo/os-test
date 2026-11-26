@@ -49,6 +49,9 @@ static const os_test_case_t g_tests[] = {
     { "scheduler", "context_switch_latency",       test_context_switch_latency },
     { "ipc",       "unix_socketpair",              test_unix_socketpair },
     { "ipc",       "anonymous_shared_memory",      test_anonymous_shared_memory },
+    { "memory",    "mmap_page_alignment",          test_mmap_page_alignment },
+    { "memory",    "mprotect_readonly_fault",      test_mprotect_readonly_fault },
+    { "memory",    "mprotect_guard_page",          test_mprotect_guard_page },
 };
 
 static const size_t g_test_count = sizeof(g_tests) / sizeof(g_tests[0]);

@@ -139,4 +139,9 @@ int test_context_switch_latency(char *detail_buf, size_t detail_size);
 int test_unix_socketpair(char *detail_buf, size_t detail_size);
 int test_anonymous_shared_memory(char *detail_buf, size_t detail_size);
 
+/* Virtual memory protection test suite (src/test_memory.c) */
+int test_mmap_page_alignment(char *detail_buf, size_t detail_size);
+int test_mprotect_readonly_fault(char *detail_buf, size_t detail_size);
+int test_mprotect_guard_page(char *detail_buf, size_t detail_size);
+
 #endif /* OS_TEST_H */
